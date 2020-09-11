@@ -1,9 +1,9 @@
-import xml2js from 'xml2js';
+import { Parser } from 'xml2js';
 import { IParser } from './parser';
 
 export class XmlParser implements IParser {
     parse(data, sub) {
-        let parser = new xml2js.Parser();
+        let parser = new Parser();
         parser.parseStringPromise(data)
             .then(res => {
                 if (res['ValCurs'] && res['ValCurs'].Valute) {

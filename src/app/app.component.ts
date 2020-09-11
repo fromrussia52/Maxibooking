@@ -41,6 +41,8 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
                 name: value,
                 state: null
             });
+
+            this.searchValueModel.control.setValue('', { emitEvent: false });
         }));
 
     }

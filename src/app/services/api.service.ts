@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpResponse, HttpParams, HttpHeaders } from '@angular/common/http';
-import { Observable, throwError } from 'rxjs';
+import { EMPTY, Observable, throwError } from 'rxjs';
 import { map, switchMap, switchMapTo } from 'rxjs/operators';
 import { JsonParser } from '../parsers/json';
 import { XmlParser } from '../parsers/xml';
@@ -24,7 +24,7 @@ export class ApiService {
 
         if (!this._allowedFormats.includes(format)) {
             alert(`Формат ${format} не поддерживается.\nРазрешенные форматы: ${this._allowedFormats.join(', ')}`);
-            return;
+            return EMPTY;
         }
 
         let headers = new HttpHeaders();
