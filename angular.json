@@ -30,7 +30,9 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+                "node_modules/xml2js/lib/xml2js.js"
+            ]
           },
           "configurations": {
             "production": {
